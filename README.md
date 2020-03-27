@@ -12,7 +12,7 @@
 ```
 或者直接添加到页面内
 ```
-        SwitchConfig.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
+        SwitchManager.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
             print("完成")
         }
 ```
