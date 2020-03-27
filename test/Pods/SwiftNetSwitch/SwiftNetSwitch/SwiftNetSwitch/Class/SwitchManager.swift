@@ -26,7 +26,7 @@ public let kNameRelease = "Release环境"
 public let kNameDev = "Dev环境"
 public let kNameOther = "其他环境"
 
-public class SwitchManager {
+class SwitchManager {
 
     
     /// 单例使用

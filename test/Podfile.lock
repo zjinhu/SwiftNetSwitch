@@ -1,0 +1,16 @@
+PODS:
+  - SwiftNetSwitch (0.0.2)
+
+DEPENDENCIES:
+  - SwiftNetSwitch
+
+SPEC REPOS:
+  trunk:
+    - SwiftNetSwitch
+
+SPEC CHECKSUMS:
+  SwiftNetSwitch: ad26c8e6358aa4a076bc229b5e4e2d02552f07d0
+
+PODFILE CHECKSUM: 155f807c5eab53766477c544dd5637dbaef67770
+
+COCOAPODS: 1.9.1

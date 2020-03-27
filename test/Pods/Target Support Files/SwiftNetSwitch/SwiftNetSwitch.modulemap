@@ -1,0 +1,6 @@
+framework module SwiftNetSwitch {
+  umbrella header "SwiftNetSwitch-umbrella.h"
+
+  export *
+  module * { export * }
+}
