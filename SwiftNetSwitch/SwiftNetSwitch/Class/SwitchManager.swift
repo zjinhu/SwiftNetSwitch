@@ -76,18 +76,16 @@ public class SwitchManager {
     
     
     private let keyDefaultConfigSign = "keyDefaultConfigSign"
-    
-    typealias CallbackHandler = (() -> Void)
-    
+ 
     private var configDict = [String : Any]()
     
     private var isExitApp : Bool? = false
     
-    private var callBack : CallbackHandler?
+    private var callBack : (() -> Void)?
     
     private var controller : UIViewController?
     
-    lazy var button : UIButton = {
+    private lazy var button : UIButton = {
         let button = UIButton.init(type: .custom)
         button.frame = CGRect.init(x: 0, y: 0, width: 80, height: 44)
         button.contentHorizontalAlignment = .right
@@ -159,7 +157,7 @@ public class SwitchManager {
 extension SwitchManager {
     
     public func configWithNavBar(_ vc : UIViewController,
-                          _ complete : @escaping CallbackHandler,
+                          _ complete : @escaping (() -> Void),
                           _ exitApp : Bool? = false){
         isExitApp = exitApp
         callBack = complete
@@ -171,7 +169,7 @@ extension SwitchManager {
     
     public func configWithFrame(_ vc : UIViewController,
                          _ frame : CGRect ,
-                         _ complete : @escaping CallbackHandler,
+                         _ complete : @escaping (() -> Void),
                          _ exitApp : Bool? = false){
         isExitApp = exitApp
         callBack = complete
@@ -182,7 +180,7 @@ extension SwitchManager {
     }
     
      @objc
-     func changeNetwork() {
+     private func changeNetwork() {
  
         print("设置前：\(String(describing: getSelectNetworkName()))--\(String(describing: getSelectNetworkConfig()))")
         let vc = SwitchController()
@@ -207,7 +205,7 @@ extension SwitchManager {
         
     }
     
-    func changeNetworkSucc(){
+    private func changeNetworkSucc(){
         callBack?()
         guard let ex = isExitApp else {
             return
