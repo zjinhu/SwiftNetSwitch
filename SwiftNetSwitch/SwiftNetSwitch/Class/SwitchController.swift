@@ -37,7 +37,11 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.estimatedSectionHeaderHeight = 0;
         tableView.estimatedSectionFooterHeight = 0;
         tableView.delaysContentTouches = true
-        tableView.contentInsetAdjustmentBehavior = .automatic
+        if #available(iOS 11.0, *) {
+            tableView.contentInsetAdjustmentBehavior = .automatic
+        } else {
+            // Fallback on earlier versions
+        }
         return tableView
     }()
     
