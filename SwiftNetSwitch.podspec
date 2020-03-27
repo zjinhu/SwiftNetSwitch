@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftNetSwitch'
-  s.version          = '0.0.1'
+  s.version          = '0.0.2'
   s.summary          = '网络环境切换组件.'
  
   s.description      = <<-DESC
@@ -13,7 +13,7 @@ Pod::Spec.new do |s|
   s.author           = { 'HU' => '814030966@qq.com' }
   s.source           = { :git => 'https://github.com/jackiehu/SwiftNetSwitch.git', :tag => s.version.to_s }
 
-  s.ios.deployment_target = "11.0" 
+  s.ios.deployment_target = "10.0" 
   s.swift_versions     = ['5.2', '5.1', '5.0', '4.2']
   s.requires_arc = true
  

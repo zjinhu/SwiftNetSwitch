@@ -20,10 +20,12 @@ class ViewController: UIViewController {
 //        SwitchConfig.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
 //            print("完成")
 //        }
-        
-        SwitchManager.shared.configWithNavBar(self) {
-            print("完成")
-        }
+        #if DEBUG
+            SwitchManager.shared.configWithNavBar(self) {
+                print("完成")
+            }
+        #endif
+
     }
 
 
