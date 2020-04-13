@@ -81,7 +81,7 @@ public class SwitchManager {
     
     private var isExitApp : Bool? = false
     
-    private var callBack : (() -> Void)?
+    private var callBack : ((_ type : NetworkConfigSign) -> Void)?
     
     private var controller : UIViewController?
     
@@ -163,7 +163,7 @@ extension SwitchManager {
     ///   - exitApp: 是否退出APP
     public func configWithNavBar(_ vc : UIViewController,
                                  _ exitApp : Bool? = false,
-                                 _ complete : @escaping (() -> Void)){
+                                 _ complete : @escaping ((_ type : NetworkConfigSign) -> Void)){
         isExitApp = exitApp
         callBack = complete
         controller = vc
@@ -181,7 +181,7 @@ extension SwitchManager {
     public func configWithFrame(_ vc : UIViewController,
                                 _ frame : CGRect ,
                                 _ exitApp : Bool? = false,
-                                _ complete : @escaping (() -> Void) ){
+                                _ complete : @escaping ((_ type : NetworkConfigSign) -> Void) ){
         isExitApp = exitApp
         callBack = complete
         controller = vc
@@ -199,7 +199,7 @@ extension SwitchManager {
     public func configWithView(_ vc : UIViewController,
                                _ view : UIView ,
                                _ exitApp : Bool? = false,
-                               _ complete : @escaping (() -> Void) ){
+                               _ complete : @escaping ((_ type : NetworkConfigSign) -> Void) ){
         isExitApp = exitApp
         callBack = complete
         controller = vc
@@ -221,6 +221,18 @@ extension SwitchManager {
             self.saveSelectNetworkName(name)
             self.saveSelectNetworkConfig(name)
             
+            switch name {
+            case NetworkConfigSign.debug.rawValue:
+                self.defaultSign = .debug
+            case NetworkConfigSign.release.rawValue:
+                self.defaultSign = .release
+            case NetworkConfigSign.dev.rawValue:
+                self.defaultSign = .dev
+            case NetworkConfigSign.other.rawValue:
+                self.defaultSign = .other
+            default:
+                print("")
+            }
             print("设置后：\(String(describing: self.getSelectNetworkName()))--\(String(describing: self.getSelectNetworkConfig()))")
             
             self.button.setTitle(self.getSelectNetworkName(), for: .normal)
@@ -235,7 +247,7 @@ extension SwitchManager {
     }
     
     private func changeNetworkSucc(){
-        callBack?()
+        callBack?(defaultSign)
         guard let ex = isExitApp else {
             return
         }

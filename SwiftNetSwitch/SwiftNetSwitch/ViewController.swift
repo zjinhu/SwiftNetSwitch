@@ -30,8 +30,8 @@ class ViewController: UIViewController {
 //            print("完成")
 //        }
         
-        SwitchManager.shared.configWithNavBar(self) {
-            print("完成")
+        SwitchManager.shared.configWithNavBar(self) { type in
+            print("完成设置，当前环境：\(type)")
         }
         #endif
 
