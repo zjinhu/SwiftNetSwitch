@@ -156,20 +156,20 @@ public class SwitchManager {
 }
 extension SwitchManager {
     
-    /// 添加到导航栏
+      /// 添加到导航栏
     /// - Parameters:
     ///   - vc: 当前VC
     ///   - complete: 完成回调
     ///   - exitApp: 是否退出APP
     public func configWithNavBar(_ vc : UIViewController,
-                          _ complete : @escaping (() -> Void),
-                          _ exitApp : Bool? = false){
+                                 _ exitApp : Bool? = false,
+                                 _ complete : @escaping (() -> Void)){
         isExitApp = exitApp
         callBack = complete
         controller = vc
-         
+        
         vc.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
-         
+        
     }
     
     /// 添加到VC 的view上
@@ -179,9 +179,9 @@ extension SwitchManager {
     ///   - complete: 完成回调
     ///   - exitApp: 是否退出APP
     public func configWithFrame(_ vc : UIViewController,
-                         _ frame : CGRect ,
-                         _ complete : @escaping (() -> Void),
-                         _ exitApp : Bool? = false){
+                                _ frame : CGRect ,
+                                _ exitApp : Bool? = false,
+                                _ complete : @escaping (() -> Void) ){
         isExitApp = exitApp
         callBack = complete
         controller = vc
@@ -197,9 +197,9 @@ extension SwitchManager {
     ///   - complete: 完成回调
     ///   - exitApp: 是否退出APP
     public func configWithView(_ vc : UIViewController,
-                         _ view : UIView ,
-                         _ complete : @escaping (() -> Void),
-                         _ exitApp : Bool? = false){
+                               _ view : UIView ,
+                               _ exitApp : Bool? = false,
+                               _ complete : @escaping (() -> Void) ){
         isExitApp = exitApp
         callBack = complete
         controller = vc

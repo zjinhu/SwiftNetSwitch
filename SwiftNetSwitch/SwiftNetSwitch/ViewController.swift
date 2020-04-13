@@ -26,6 +26,10 @@ class ViewController: UIViewController {
 //            print("完成")
 //        }
         
+//        SwitchManager.shared.configWithNavBar(self, true) {
+//            print("完成")
+//        }
+        
         SwitchManager.shared.configWithNavBar(self) {
             print("完成")
         }
