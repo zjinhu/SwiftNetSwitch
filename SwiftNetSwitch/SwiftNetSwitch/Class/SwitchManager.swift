@@ -88,7 +88,7 @@ public class SwitchManager {
     private lazy var button : UIButton = {
         let button = UIButton.init(type: .custom)
         button.frame = CGRect.init(x: 0, y: 0, width: 80, height: 44)
-        button.contentHorizontalAlignment = .right
+        button.contentHorizontalAlignment = .center
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         button.titleLabel?.adjustsFontSizeToFitWidth = true
         button.setTitleColor(.black, for: .normal)
@@ -156,6 +156,11 @@ public class SwitchManager {
 }
 extension SwitchManager {
     
+    /// 添加到导航栏
+    /// - Parameters:
+    ///   - vc: 当前VC
+    ///   - complete: 完成回调
+    ///   - exitApp: 是否退出APP
     public func configWithNavBar(_ vc : UIViewController,
                           _ complete : @escaping (() -> Void),
                           _ exitApp : Bool? = false){
@@ -167,6 +172,12 @@ extension SwitchManager {
          
     }
     
+    /// 添加到VC 的view上
+    /// - Parameters:
+    ///   - vc: 当前VC
+    ///   - frame: 添加的位置
+    ///   - complete: 完成回调
+    ///   - exitApp: 是否退出APP
     public func configWithFrame(_ vc : UIViewController,
                          _ frame : CGRect ,
                          _ complete : @escaping (() -> Void),
@@ -177,6 +188,24 @@ extension SwitchManager {
         
         button.frame = frame
         vc.view.addSubview(button)
+    }
+    
+    /// 添加到选中的view上
+    /// - Parameters:
+    ///   - vc: 当前VC
+    ///   - view: 被添加的view
+    ///   - complete: 完成回调
+    ///   - exitApp: 是否退出APP
+    public func configWithView(_ vc : UIViewController,
+                         _ view : UIView ,
+                         _ complete : @escaping (() -> Void),
+                         _ exitApp : Bool? = false){
+        isExitApp = exitApp
+        callBack = complete
+        controller = vc
+        
+        button.frame = view.frame
+        view.addSubview(button)
     }
     
      @objc

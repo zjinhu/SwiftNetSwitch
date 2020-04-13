@@ -16,14 +16,19 @@ class ViewController: UIViewController {
        let sign = SwitchManager.shared.getSelectNetworkSign()
        let config = SwitchManager.shared.getSelectNetworkConfig()
         print("sin--\(String(describing: sign))--config:\(String(describing: config))")
-//
-//        SwitchConfig.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
+
+        #if DEBUG
+//        SwitchManager.shared.configWithView(self, self.view) {
 //            print("完成")
 //        }
-        #if DEBUG
-            SwitchManager.shared.configWithNavBar(self) {
-                print("完成")
-            }
+//        
+//        SwitchManager.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
+//            print("完成")
+//        }
+        
+        SwitchManager.shared.configWithNavBar(self) {
+            print("完成")
+        }
         #endif
 
     }

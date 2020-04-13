@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftNetSwitch'
-  s.version          = '0.0.3'
+  s.version          = '0.0.4'
   s.summary          = '网络环境切换组件.'
  
   s.description      = <<-DESC
