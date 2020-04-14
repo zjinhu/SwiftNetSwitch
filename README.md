@@ -3,7 +3,9 @@
 如果你的APP在开发测试阶段有多套网络环境，且不想频繁打包，可以使用这个组件很方便的在APP内切换各种配置好的网络环境。
 你需要找到一个页面用于添加组件入口：
 比如添加到导航栏上
+
 ![](Gif/屏幕录制2020-04-14 上午10.48.58.gif)
+
 ```
         #if DEBUG
             SwitchManager.shared.configWithNavBar(self) {
@@ -12,7 +14,9 @@
         #endif
 ```
 或者直接添加到页面内
+
 ![](Gif/屏幕录制2020-04-14 上午10.51.01.gif)
+
 ```
         SwitchManager.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
             print("完成")
