@@ -39,7 +39,7 @@ class ViewController: UIViewController {
 //            print("完成设置，当前环境：\(type)")
 //        }
         
-        //添加到指定容器view里
+//        添加到指定容器view里
 //        SwitchManager.shared.configWithView(self, vi) { type in
 //            print("\(type)")
 //        }
