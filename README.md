@@ -4,7 +4,7 @@
 你需要找到一个页面用于添加组件入口：
 比如添加到导航栏上
 
-![](Gif/屏幕录制2020-04-14 上午10.48.58.gif)
+![](Gif/nav.gif)
 
 ```
         #if DEBUG
@@ -15,7 +15,7 @@
 ```
 或者直接添加到页面内
 
-![](Gif/屏幕录制2020-04-14 上午10.51.01.gif)
+![](Gif/view.gif)
 
 ```
         SwitchManager.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {
