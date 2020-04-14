@@ -10,10 +10,21 @@ import Foundation
 class Config {
     static func setConfig(){
         SwitchManager.shared.defaultSign = .debug
-        SwitchManager.shared.configHostDebug = ["aaaDebug":"111Debug","bbbDebug":"222Debug"]
-        SwitchManager.shared.configHostRelease = ["aaaRelease":"111Release","bbbRelease":"222Release"]
-        SwitchManager.shared.configHostDev = ["aaaDev":"111Dev","bbbDev":"222Dev"]
-        SwitchManager.shared.configHostOther = ["aaaOther":"111Other","bbbOther":"222Other","cccOther":"333Other","dddOther":"444Other"]
+        
+        SwitchManager.shared.configHostDebug = ["DebugSever":"https://Debug.qq.com",
+                                                "AppDebugSever":"https://Debug.baidu.com"]
+        
+        SwitchManager.shared.configHostRelease = ["ReleaseSever":"https://www.qq.com",
+                                                  "AppReleaseSever":"https://www.baidu.com"]
+        
+        SwitchManager.shared.configHostDev = ["DevSever":"https://Dev.qq.com",
+                                              "AppDevSever":"https://Dev.baidu.com"]
+        
+        SwitchManager.shared.configHostOther = ["OtherSever":"https://Other.qq.com",
+                                                "AppOtherSever":"https://Other.baidu.com",
+                                                "WebOtherSever":"https://Other.sina.com",
+                                                "ShopOtherSever":"https://Other.taobao.com"]
+        
         SwitchManager.shared.setDefaultNetworkConfig()
     }
 }

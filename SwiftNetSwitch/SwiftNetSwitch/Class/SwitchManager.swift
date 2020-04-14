@@ -121,7 +121,7 @@ public class SwitchManager {
             return kNameDev
         case NetworkConfigSign.other.rawValue:
             return kNameOther
-        case .none,.some(_):
+        default:
             return "未知"
         }
     }
@@ -204,7 +204,7 @@ extension SwitchManager {
         callBack = complete
         controller = vc
         
-        button.frame = view.frame
+        button.frame = view.bounds
         view.addSubview(button)
     }
     
