@@ -55,6 +55,19 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         return button
     }()
     
+    lazy var backBtn : UIButton = {
+        let button = UIButton.init(type: .custom)
+        button.frame = CGRect.init(x: 0, y: 0, width: 80, height: 44)
+        button.contentHorizontalAlignment = .left
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
+        button.titleLabel?.adjustsFontSizeToFitWidth = true
+        button.setTitleColor(.black, for: .normal)
+        button.setTitleColor(.lightGray, for: .highlighted)
+        button.setTitle("取消", for: .normal)
+        button.addTarget(self, action: #selector(goBack), for: .touchUpInside)
+        return button
+    }()
+    
     var selectedName : String?
     var previousIndex : IndexPath?
     override func viewDidLoad() {
@@ -62,6 +75,8 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
 
         self.navigationItem.title = "网络环境配置"
         self.view.backgroundColor = .white
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: backBtn)
         self.navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: button)
         self.view.addSubview(tableView)
         
@@ -144,6 +159,13 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
             return
         }
         callback(name)
+        self.dismiss(animated: true) {
+            
+        }
+    }
+    
+    @objc
+    public func goBack() {
         self.dismiss(animated: true) {
             
         }
