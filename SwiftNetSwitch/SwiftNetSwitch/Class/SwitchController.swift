@@ -37,11 +37,7 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         tableView.estimatedSectionHeaderHeight = 0;
         tableView.estimatedSectionFooterHeight = 0;
         tableView.delaysContentTouches = true
-        if #available(iOS 11.0, *) {
-            tableView.contentInsetAdjustmentBehavior = .automatic
-        } else {
-            // Fallback on earlier versions
-        }
+        tableView.contentInsetAdjustmentBehavior = .automatic
         return tableView
     }()
     
@@ -70,8 +66,7 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
         self.view.addSubview(tableView)
         
     }
-    
-
+ 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return configURLDic?.keys.count ?? 0
     }
@@ -117,7 +112,10 @@ class SwitchController: UIViewController, UITableViewDelegate, UITableViewDataSo
             cell?.detailTextLabel?.textColor = .black
             previousIndex = indexPath
         }
-        cell?.layoutSubviews()
+//        cell?.layoutSubviews()
+//        cell?.setNeedsUpdateConstraints()
+//        cell?.updateConstraints()
+
         return cell ?? UITableViewCell()
     }
     
