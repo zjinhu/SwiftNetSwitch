@@ -5,8 +5,7 @@
 [![Version](https://img.shields.io/cocoapods/v/SwiftNetSwitch.svg?style=flat)](http://cocoapods.org/pods/SwiftNetSwitch)
 ![Xcode 9.0+](https://img.shields.io/badge/Xcode-9.0%2B-blue.svg)
 ![iOS 11.0+](https://img.shields.io/badge/iOS-11.0%2B-blue.svg)
-![Swift 4.2+](https://img.shields.io/badge/Swift-4.2%2B-orange.svg)
-[![Swift 5.0](https://img.shields.io/badge/Swift-5.0-green.svg?style=flat)](https://developer.apple.com/swift/)
+[![Swift 5.0+](https://img.shields.io/badge/Swift-5.0-green.svg?style=flat)](https://developer.apple.com/swift/)
 
 如果你的APP在开发测试阶段有多套网络环境，且不想频繁打包，可以使用这个组件很方便的在APP内切换各种配置好的网络环境。
 你需要找到一个页面用于添加组件入口：
