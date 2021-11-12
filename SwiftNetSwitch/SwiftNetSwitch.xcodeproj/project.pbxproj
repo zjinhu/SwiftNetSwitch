@@ -7,18 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		816F3D92273E10FE007BB659 /* SwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3D90273E10FE007BB659 /* SwitchController.swift */; };
+		816F3D93273E10FE007BB659 /* SwitchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816F3D91273E10FE007BB659 /* SwitchManager.swift */; };
 		81E7F3C6242C60AA0035B8E7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F3C5242C60AA0035B8E7 /* AppDelegate.swift */; };
 		81E7F3C8242C60AA0035B8E7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F3C7242C60AA0035B8E7 /* SceneDelegate.swift */; };
 		81E7F3CA242C60AA0035B8E7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F3C9242C60AA0035B8E7 /* ViewController.swift */; };
 		81E7F3CD242C60AA0035B8E7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E7F3CB242C60AA0035B8E7 /* Main.storyboard */; };
 		81E7F3CF242C60AD0035B8E7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81E7F3CE242C60AD0035B8E7 /* Assets.xcassets */; };
 		81E7F3D2242C60AD0035B8E7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81E7F3D0242C60AD0035B8E7 /* LaunchScreen.storyboard */; };
-		81E7F3DB242C82CB0035B8E7 /* SwitchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F3DA242C82CB0035B8E7 /* SwitchManager.swift */; };
-		81E7F3DD242C82EF0035B8E7 /* SwitchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F3DC242C82EF0035B8E7 /* SwitchController.swift */; };
 		81E7F3DF242DC2850035B8E7 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81E7F3DE242DC2850035B8E7 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		816F3D90273E10FE007BB659 /* SwitchController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchController.swift; sourceTree = "<group>"; };
+		816F3D91273E10FE007BB659 /* SwitchManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwitchManager.swift; sourceTree = "<group>"; };
 		81E7F3C2242C60AA0035B8E7 /* SwiftNetSwitch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftNetSwitch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		81E7F3C5242C60AA0035B8E7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		81E7F3C7242C60AA0035B8E7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -27,8 +29,6 @@
 		81E7F3CE242C60AD0035B8E7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81E7F3D1242C60AD0035B8E7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		81E7F3D3242C60AD0035B8E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		81E7F3DA242C82CB0035B8E7 /* SwitchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchManager.swift; sourceTree = "<group>"; };
-		81E7F3DC242C82EF0035B8E7 /* SwitchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchController.swift; sourceTree = "<group>"; };
 		81E7F3DE242DC2850035B8E7 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +43,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		816F3D8F273E10FE007BB659 /* SwiftNetSwitch */ = {
+			isa = PBXGroup;
+			children = (
+				816F3D90273E10FE007BB659 /* SwitchController.swift */,
+				816F3D91273E10FE007BB659 /* SwitchManager.swift */,
+			);
+			name = SwiftNetSwitch;
+			path = ../../Sources/SwiftNetSwitch;
+			sourceTree = "<group>";
+		};
 		81E7F3B9242C60AA0035B8E7 = {
 			isa = PBXGroup;
 			children = (
@@ -62,7 +72,7 @@
 		81E7F3C4242C60AA0035B8E7 /* SwiftNetSwitch */ = {
 			isa = PBXGroup;
 			children = (
-				81E7F3D9242C829C0035B8E7 /* Class */,
+				816F3D8F273E10FE007BB659 /* SwiftNetSwitch */,
 				81E7F3C5242C60AA0035B8E7 /* AppDelegate.swift */,
 				81E7F3C7242C60AA0035B8E7 /* SceneDelegate.swift */,
 				81E7F3C9242C60AA0035B8E7 /* ViewController.swift */,
@@ -73,15 +83,6 @@
 				81E7F3D3242C60AD0035B8E7 /* Info.plist */,
 			);
 			path = SwiftNetSwitch;
-			sourceTree = "<group>";
-		};
-		81E7F3D9242C829C0035B8E7 /* Class */ = {
-			isa = PBXGroup;
-			children = (
-				81E7F3DA242C82CB0035B8E7 /* SwitchManager.swift */,
-				81E7F3DC242C82EF0035B8E7 /* SwitchController.swift */,
-			);
-			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -156,11 +157,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				81E7F3CA242C60AA0035B8E7 /* ViewController.swift in Sources */,
-				81E7F3DD242C82EF0035B8E7 /* SwitchController.swift in Sources */,
-				81E7F3DB242C82CB0035B8E7 /* SwitchManager.swift in Sources */,
+				816F3D92273E10FE007BB659 /* SwitchController.swift in Sources */,
 				81E7F3C6242C60AA0035B8E7 /* AppDelegate.swift in Sources */,
 				81E7F3C8242C60AA0035B8E7 /* SceneDelegate.swift in Sources */,
 				81E7F3DF242DC2850035B8E7 /* Config.swift in Sources */,
+				816F3D93273E10FE007BB659 /* SwitchManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

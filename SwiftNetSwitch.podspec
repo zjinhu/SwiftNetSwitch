@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SwiftNetSwitch'
-  s.version          = '0.3.0'
+  s.version          = '0.3.1'
   s.summary          = '网络环境切换组件.'
  
   s.description      = <<-DESC
@@ -17,6 +17,6 @@ Pod::Spec.new do |s|
   s.swift_versions     = ['5.2', '5.1', '5.0', '4.2']
   s.requires_arc = true
  
-  s.source_files = 'SwiftNetSwitch/SwiftNetSwitch/Class/**/*'  
+  s.source_files = 'Sources/**/*'  
  
 end
