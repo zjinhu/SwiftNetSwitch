@@ -31,9 +31,10 @@ public class SwitchManager {
     
     /// 单例使用
     public static let shared = SwitchManager()
+    ///保证单例调用
+    private init(){ }
     
     public let userDefaults = UserDefaults.init(suiteName: "SwiftNetSwitch")
-    
     
     /// 网络环境
     public var defaultSign : NetworkConfigSign = .debug
@@ -98,11 +99,7 @@ public class SwitchManager {
         button.addTarget(self, action: #selector(changeNetwork), for: .touchUpInside)
         return button
     }()
-    
-    private init() {
-        
-    }
-    
+
     public func getSelectNetworkSign() -> String? {
         return userDefaults?.object(forKey: selectNetworkName) as? String
     }
