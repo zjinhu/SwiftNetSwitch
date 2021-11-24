@@ -28,7 +28,7 @@ class ViewController: UIViewController {
         SwitchManager.shared.configWithFrame(self, CGRect.init(x: 100, y: 100, width: 100, height: 50)) {type in
             print("完成")
         }
-        
+        #else
 //        添加到导航栏上并且切换完成后杀死APP
         SwitchManager.shared.configWithNavBar(self, true) {type in
             print("完成")

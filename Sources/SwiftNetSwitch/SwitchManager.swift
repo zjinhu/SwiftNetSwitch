@@ -27,8 +27,6 @@ public let kNameDev = "Dev环境"
 public let kNameOther = "其他环境"
 
 public class SwitchManager {
-
-    
     /// 单例使用
     public static let shared = SwitchManager()
     ///保证单例调用
@@ -75,7 +73,6 @@ public class SwitchManager {
         }
     }
     
-    
     private let keyDefaultConfigSign = "keyDefaultConfigSign"
  
     private var configDict = [String : Any]()
@@ -100,6 +97,54 @@ public class SwitchManager {
         return button
     }()
 
+    @objc
+    private func changeNetwork() {
+       print("设置前：\(String(describing: getSelectNetworkName()))--\(String(describing: getSelectNetworkConfig()))")
+       let vc = SwitchController()
+       vc.configURLDic = configDict
+       vc.configName = getSelectNetworkSign()
+       
+       vc.configSelected = { [weak self] name in
+           guard let `self` = self else { return }
+           self.saveSelectNetworkName(name)
+           self.saveSelectNetworkConfig(name)
+           
+           switch name {
+           case NetworkConfigSign.debug.rawValue:
+               self.defaultSign = .debug
+           case NetworkConfigSign.release.rawValue:
+               self.defaultSign = .release
+           case NetworkConfigSign.dev.rawValue:
+               self.defaultSign = .dev
+           case NetworkConfigSign.other.rawValue:
+               self.defaultSign = .other
+           default:
+               print("")
+           }
+           print("设置后：\(String(describing: self.getSelectNetworkName()))--\(String(describing: self.getSelectNetworkConfig()))")
+           
+           self.button.setTitle(self.getSelectNetworkName(), for: .normal)
+           self.changeNetworkSucc()
+       }
+       
+       let nav = UINavigationController.init(rootViewController: vc)
+       controller?.present(nav, animated: true, completion: {
+           
+       })
+   }
+   
+   private func changeNetworkSucc(){
+       callBack?(defaultSign)
+       guard let ex = isExitApp else {
+           return
+       }
+       if ex {
+           exit(0)
+       }
+   }
+}
+extension SwitchManager {
+    
     public func getSelectNetworkSign() -> String? {
         return userDefaults?.object(forKey: selectNetworkName) as? String
     }
@@ -150,8 +195,6 @@ public class SwitchManager {
         let dic = configDict[name]
         userDefaults?.set(dic, forKey: selectNetworkConfig)
     }
-}
-extension SwitchManager {
     
       /// 添加到导航栏
     /// - Parameters:
@@ -205,51 +248,4 @@ extension SwitchManager {
         view.addSubview(button)
     }
     
-     @objc
-     private func changeNetwork() {
- 
-        print("设置前：\(String(describing: getSelectNetworkName()))--\(String(describing: getSelectNetworkConfig()))")
-        let vc = SwitchController()
-        vc.configURLDic = configDict
-        vc.configName = getSelectNetworkSign()
-        
-        vc.configSelected = { [weak self] name in
-            guard let `self` = self else { return }
-            self.saveSelectNetworkName(name)
-            self.saveSelectNetworkConfig(name)
-            
-            switch name {
-            case NetworkConfigSign.debug.rawValue:
-                self.defaultSign = .debug
-            case NetworkConfigSign.release.rawValue:
-                self.defaultSign = .release
-            case NetworkConfigSign.dev.rawValue:
-                self.defaultSign = .dev
-            case NetworkConfigSign.other.rawValue:
-                self.defaultSign = .other
-            default:
-                print("")
-            }
-            print("设置后：\(String(describing: self.getSelectNetworkName()))--\(String(describing: self.getSelectNetworkConfig()))")
-            
-            self.button.setTitle(self.getSelectNetworkName(), for: .normal)
-            self.changeNetworkSucc()
-        }
-        
-        let nav = UINavigationController.init(rootViewController: vc)
-        controller?.present(nav, animated: true, completion: {
-            
-        })
-        
-    }
-    
-    private func changeNetworkSucc(){
-        callBack?(defaultSign)
-        guard let ex = isExitApp else {
-            return
-        }
-        if ex {
-            exit(0)
-        }
-    }
 }
